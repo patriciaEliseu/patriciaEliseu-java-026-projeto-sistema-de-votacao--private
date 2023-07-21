@@ -1,20 +1,15 @@
 package com.betrybe.sistemadevotacao;
 
 public class PessoaCandidata extends Pessoa {
-  public String nome;
   public int numero;
   public int votos;
 
-  @Override
-  public String getNome() {
-    return nome;
+  public PessoaCandidata(String nome, int numero) {
+    super.setNome(nome);
+    this.numero = numero;
+    this.votos = 0;
   }
-
-  @Override
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
+  
   public int getNumero() {
     return numero;
   }
@@ -31,8 +26,9 @@ public class PessoaCandidata extends Pessoa {
     this.votos = votos;
   }
 
-  int receberVoto() {
-    votos += 1;
-    return 0;
+  public void receberVoto() {
+    this.votos += 1;
   }
+
+
 }
