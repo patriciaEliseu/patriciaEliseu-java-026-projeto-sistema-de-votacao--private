@@ -4,12 +4,15 @@ public class PessoaCandidata extends Pessoa {
   public int numero;
   public int votos;
 
+  /**
+   * class PessoaCandidata.
+   */
   public PessoaCandidata(String nome, int numero) {
     super.setNome(nome);
     this.numero = numero;
     this.votos = 0;
   }
-  
+
   public int getNumero() {
     return numero;
   }
