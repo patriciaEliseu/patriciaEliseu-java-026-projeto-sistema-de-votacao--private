@@ -7,6 +7,9 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   private ArrayList<String> cpfsComputados;
   private ArrayList<PessoaEleitora> pessoasEleitoras;
 
+  /**
+   * class GerenciamentoVotacao
+   */
   public GerenciamentoVotacao() {
     this.pessoasCandidatas = new ArrayList<>();
     this.pessoasEleitoras = new ArrayList<>();
@@ -15,8 +18,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   @Override
   public void cadastrarPessoaCandidata(String nome, int numero) {
-    for (PessoaCandidata pCandidata : pessoasCandidatas) {
-      if (pCandidata.getNumero() == numero) {
+    for (PessoaCandidata peploeCandidata : pessoasCandidatas) {
+      if (peploeCandidata.getNumero() == numero) {
         System.out.println("Número da pessoa candidata já utilizado!");
         return;
       }
@@ -28,8 +31,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   @Override
   public void cadastrarPessoaEleitora(String nome, String cpf) {
-    for (PessoaEleitora pEleitora : pessoasEleitoras) {
-      if (pEleitora.getCpf().equals(cpf)) {
+    for (PessoaEleitora peploeEleitora : pessoasEleitoras) {
+      if (peploeEleitora.getCpf().equals(cpf)) {
         System.out.println("Pessoa eleitora já cadastrada!");
         return;
       }
