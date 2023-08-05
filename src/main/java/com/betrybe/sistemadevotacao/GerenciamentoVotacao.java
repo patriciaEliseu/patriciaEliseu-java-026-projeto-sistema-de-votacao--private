@@ -8,7 +8,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   private ArrayList<PessoaEleitora> pessoasEleitoras;
 
   /**
-   * class GerenciamentoVotacao
+   * class GerenciamentoVotacao.
    */
   public GerenciamentoVotacao() {
     this.pessoasCandidatas = new ArrayList<>();
