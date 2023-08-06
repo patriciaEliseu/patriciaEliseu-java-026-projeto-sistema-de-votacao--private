@@ -1,6 +1,6 @@
 package com.betrybe.sistemadevotacao;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.lang.Math;
 
 public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
@@ -64,7 +64,9 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     pessoasEleitoras.add(newEleitora);
   }
 
-
+  /**
+   * class GerenciamentoVotacao.
+   */
   public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
     if (cpfsComputados.equals(cpfPessoaEleitora)) {
       System.out.println("Pessoa eleitora já votou!");
@@ -78,6 +80,9 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     }
   }
 
+  /**
+   * class GerenciamentoVotacao.
+   */
 
   public void mostrarResultado() {
     int totalDeVotos = cpfsComputados.size();
@@ -91,7 +96,6 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
             + votosRecebidos + "votos ( " + Math.round(percentualVotos) + "% )");
       }
       System.out.println("Total de votos: " + totalDeVotos);
-      return;
     }
   }
 }
