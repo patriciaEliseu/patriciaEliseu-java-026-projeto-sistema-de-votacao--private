@@ -22,10 +22,6 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     return pessoasCandidatas;
   }
 
-  public void setPessoasCandidatas(ArrayList<PessoaCandidata> pessoasCandidatas) {
-    this.pessoasCandidatas = pessoasCandidatas;
-  }
-
   public ArrayList<String> getCpfsComputados() {
     return cpfsComputados;
   }
@@ -35,9 +31,6 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     return pessoasEleitoras;
   }
 
-  public void setPessoasEleitoras(ArrayList<PessoaEleitora> pessoasEleitoras) {
-    this.pessoasEleitoras = pessoasEleitoras;
-  }
 
   @Override
   public void cadastrarPessoaCandidata(String nome, int numero) {
@@ -61,21 +54,21 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       }
 
     }
-    PessoaEleitora newEleitora = new PessoaEleitora(nome, cpf);
-    pessoasEleitoras.add(newEleitora);
+    PessoaEleitora newEleitor = new PessoaEleitora(nome, cpf);
+    pessoasEleitoras.add(newEleitor);
   }
 
   /**
    * class GerenciamentoVotacao.
    */
   public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
-    if (cpfsComputados.equals(cpfPessoaEleitora)) {
+    if (cpfsComputados.contains(cpfPessoaEleitora)) {
       System.out.println("Pessoa eleitora já votou!");
-      return;
     } else {
       for (PessoaCandidata pessoaCandidata : pessoasCandidatas) {
         if (pessoaCandidata.getNumero() == numeroPessoaCandidata) {
           pessoaCandidata.receberVoto();
+          cpfsComputados.add(cpfPessoaEleitora);
         }
       }
     }
@@ -93,8 +86,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       for (PessoaCandidata resultadoCandidato : pessoasCandidatas) {
         int votosRecebidos = resultadoCandidato.getVotos();
         float percentualVotos = (votosRecebidos * 100) / totalDeVotos;
-        System.out.println("Nome: " + resultadoCandidato.getNome() + "-"
-            + votosRecebidos + "votos ( " + Math.round(percentualVotos) + "% )");
+        System.out.println("Nome: " + resultadoCandidato.getNome() + " - "
+            + votosRecebidos + " votos ( " + Math.round(percentualVotos) + "% )");
       }
       System.out.println("Total de votos: " + totalDeVotos);
     }
