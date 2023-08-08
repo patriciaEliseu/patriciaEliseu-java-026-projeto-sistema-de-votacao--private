@@ -54,8 +54,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       }
 
     }
-    PessoaEleitora newEleitor = new PessoaEleitora(nome, cpf);
-    pessoasEleitoras.add(newEleitor);
+
   }
 
   /**
