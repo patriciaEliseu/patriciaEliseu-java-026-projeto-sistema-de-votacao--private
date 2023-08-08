@@ -52,9 +52,9 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
         System.out.println("Pessoa eleitora já cadastrada!");
         return;
       }
-
     }
-
+    PessoaEleitora newEleitora = new PessoaEleitora(nome, cpf);
+    pessoasEleitoras.add(newEleitora);
   }
 
   /**
@@ -84,7 +84,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     } else {
       for (PessoaCandidata resultadoCandidato : pessoasCandidatas) {
         int votosRecebidos = resultadoCandidato.getVotos();
-        float percentualVotos = (votosRecebidos * 100) / totalDeVotos;
+        float percentualVotos = (float) (votosRecebidos * 100) / totalDeVotos;
         System.out.println("Nome: " + resultadoCandidato.getNome() + " - "
             + votosRecebidos + " votos ( " + Math.round(percentualVotos) + "% )");
       }
